@@ -1,0 +1,1657 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 1,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 8,
+        "panels": [],
+        "title": "Inside Values",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "frser-sqlite-datasource",
+          "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-RdYlGr"
+            },
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 0,
+          "y": 1
+        },
+        "id": 2,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "9.5.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "queryText": "SELECT aq FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "queryType": "table",
+            "rawQueryText": "SELECT aq FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "refId": "A",
+            "timeColumns": [
+              "time",
+              "ts"
+            ]
+          }
+        ],
+        "title": "Air Quality",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "frser-sqlite-datasource",
+          "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "max": 60,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 27
+                },
+                {
+                  "color": "orange",
+                  "value": 35
+                },
+                {
+                  "color": "dark-orange",
+                  "value": 40
+                },
+                {
+                  "color": "dark-red",
+                  "value": 50
+                }
+              ]
+            },
+            "unit": "celsius"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 6,
+          "y": 1
+        },
+        "id": 6,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "9.5.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "queryText": "SELECT ith FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "queryType": "table",
+            "rawQueryText": "SELECT ith FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "refId": "A",
+            "timeColumns": [
+              "time",
+              "ts"
+            ]
+          }
+        ],
+        "title": "Heat Index",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "frser-sqlite-datasource",
+          "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "max": 40,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-blue",
+                  "value": null
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 5
+                },
+                {
+                  "color": "light-blue",
+                  "value": 10
+                },
+                {
+                  "color": "light-green",
+                  "value": 15
+                },
+                {
+                  "color": "dark-green",
+                  "value": 20
+                },
+                {
+                  "color": "light-green",
+                  "value": 25
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 30
+                },
+                {
+                  "color": "dark-red",
+                  "value": 35
+                }
+              ]
+            },
+            "unit": "celsius"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 12,
+          "y": 1
+        },
+        "id": 3,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "9.5.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "queryText": "SELECT temperature FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "queryType": "table",
+            "rawQueryText": "SELECT temperature FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "refId": "A",
+            "timeColumns": [
+              "time",
+              "ts"
+            ]
+          }
+        ],
+        "title": "Temperature",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "frser-sqlite-datasource",
+          "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 20
+                },
+                {
+                  "color": "light-green",
+                  "value": 30
+                },
+                {
+                  "color": "dark-green",
+                  "value": 35
+                },
+                {
+                  "color": "light-green",
+                  "value": 45
+                },
+                {
+                  "color": "orange",
+                  "value": 55
+                },
+                {
+                  "color": "dark-red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 18,
+          "y": 1
+        },
+        "id": 4,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "9.5.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "queryText": "SELECT humidity FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "queryType": "table",
+            "rawQueryText": "SELECT humidity FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "refId": "A",
+            "timeColumns": [
+              "time",
+              "ts"
+            ]
+          }
+        ],
+        "title": "Humidity",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "frser-sqlite-datasource",
+          "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "blue",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "pressurehpa"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 9
+        },
+        "id": 5,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "queryText": "SELECT pressure FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "queryType": "table",
+            "rawQueryText": "SELECT pressure FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "refId": "A",
+            "timeColumns": [
+              "time",
+              "ts"
+            ]
+          }
+        ],
+        "title": "Pressure",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "frser-sqlite-datasource",
+          "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "blue",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "lengthm"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 9
+        },
+        "id": 7,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "queryText": "SELECT altitude FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "queryType": "table",
+            "rawQueryText": "SELECT altitude FROM invalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+            "refId": "A",
+            "timeColumns": [
+              "time",
+              "ts"
+            ]
+          }
+        ],
+        "title": "Altitude",
+        "type": "stat"
+      },
+      {
+        "collapsed": true,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 17
+        },
+        "id": 9,
+        "panels": [
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "mappings": [],
+                "max": 40,
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-blue",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-blue",
+                      "value": 5
+                    },
+                    {
+                      "color": "blue",
+                      "value": 10
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 15
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 20
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 25
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 30
+                    },
+                    {
+                      "color": "dark-red",
+                      "value": 35
+                    }
+                  ]
+                },
+                "unit": "celsius"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 6,
+              "x": 0,
+              "y": 2
+            },
+            "id": 11,
+            "options": {
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "showThresholdLabels": false,
+              "showThresholdMarkers": true
+            },
+            "pluginVersion": "9.5.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "frser-sqlite-datasource",
+                  "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+                },
+                "queryText": "SELECT temperature FROM outvalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+                "queryType": "table",
+                "rawQueryText": "SELECT temperature FROM outvalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+                "refId": "A",
+                "timeColumns": [
+                  "time",
+                  "ts"
+                ]
+              }
+            ],
+            "title": "Temperature",
+            "type": "gauge"
+          },
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "mappings": [],
+                "max": 100,
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-red",
+                      "value": null
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 20
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 30
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 35
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 45
+                    },
+                    {
+                      "color": "orange",
+                      "value": 55
+                    },
+                    {
+                      "color": "dark-red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 6,
+              "x": 6,
+              "y": 2
+            },
+            "id": 12,
+            "options": {
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "showThresholdLabels": false,
+              "showThresholdMarkers": true
+            },
+            "pluginVersion": "9.5.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "frser-sqlite-datasource",
+                  "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+                },
+                "queryText": "SELECT humidity FROM outvalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+                "queryType": "table",
+                "rawQueryText": "SELECT humidity FROM outvalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+                "refId": "A",
+                "timeColumns": [
+                  "time",
+                  "ts"
+                ]
+              }
+            ],
+            "title": "Humidity",
+            "type": "gauge"
+          },
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "blue",
+                      "value": null
+                    }
+                  ]
+                },
+                "unit": "velocityms"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 12,
+              "y": 2
+            },
+            "id": 14,
+            "options": {
+              "colorMode": "value",
+              "graphMode": "area",
+              "justifyMode": "auto",
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "textMode": "auto"
+            },
+            "pluginVersion": "9.5.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "frser-sqlite-datasource",
+                  "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+                },
+                "queryText": "SELECT wind FROM outvalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+                "queryType": "table",
+                "rawQueryText": "SELECT wind FROM outvalues ORDER BY datetime(\"date\") DESC LIMIT 1;",
+                "refId": "A",
+                "timeColumns": [
+                  "time",
+                  "ts"
+                ]
+              }
+            ],
+            "title": "Wind Speed",
+            "type": "stat"
+          }
+        ],
+        "title": "Outside Values",
+        "type": "row"
+      },
+      {
+        "collapsed": true,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 18
+        },
+        "id": 15,
+        "panels": [
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "continuous-RdYlGr"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineStyle": {
+                    "fill": "solid"
+                  },
+                  "lineWidth": 2,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "max": 100,
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-blue",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-blue",
+                      "value": 5
+                    },
+                    {
+                      "color": "light-blue",
+                      "value": 10
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 15
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 20
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 25
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 30
+                    },
+                    {
+                      "color": "dark-red",
+                      "value": 35
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 24,
+              "x": 0,
+              "y": 3
+            },
+            "id": 18,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "timezone": [
+                "Europe/Madrid"
+              ],
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "frser-sqlite-datasource",
+                  "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+                },
+                "hide": false,
+                "queryText": "SELECT aq, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM invalues;\r\n",
+                "queryType": "table",
+                "rawQueryText": "SELECT aq, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM invalues;\r\n",
+                "refId": "A",
+                "timeColumns": [
+                  "time",
+                  "ts"
+                ]
+              }
+            ],
+            "title": "Air Quality",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineStyle": {
+                    "fill": "solid"
+                  },
+                  "lineWidth": 2,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-green",
+                      "value": null
+                    },
+                    {
+                      "color": "light-orange",
+                      "value": 27
+                    },
+                    {
+                      "color": "orange",
+                      "value": 35
+                    },
+                    {
+                      "color": "dark-orange",
+                      "value": 40
+                    },
+                    {
+                      "color": "dark-red",
+                      "value": 50
+                    }
+                  ]
+                },
+                "unit": "celsius"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 24,
+              "x": 0,
+              "y": 11
+            },
+            "id": 19,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "timezone": [
+                "Europe/Madrid"
+              ],
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "frser-sqlite-datasource",
+                  "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+                },
+                "hide": false,
+                "queryText": "SELECT ith, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM invalues;",
+                "queryType": "table",
+                "rawQueryText": "SELECT ith, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM invalues;",
+                "refId": "A",
+                "timeColumns": [
+                  "time",
+                  "ts"
+                ]
+              }
+            ],
+            "title": "Heat Index",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineStyle": {
+                    "fill": "solid"
+                  },
+                  "lineWidth": 2,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-blue",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-blue",
+                      "value": 5
+                    },
+                    {
+                      "color": "light-blue",
+                      "value": 10
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 15
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 20
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 25
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 30
+                    },
+                    {
+                      "color": "dark-red",
+                      "value": 35
+                    }
+                  ]
+                },
+                "unit": "celsius"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 24,
+              "x": 0,
+              "y": 19
+            },
+            "id": 17,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "timezone": [
+                "Europe/Madrid"
+              ],
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "frser-sqlite-datasource",
+                  "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+                },
+                "hide": false,
+                "queryText": "SELECT temperature, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM invalues;",
+                "queryType": "table",
+                "rawQueryText": "SELECT temperature, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM invalues;",
+                "refId": "A",
+                "timeColumns": [
+                  "time",
+                  "ts"
+                ]
+              }
+            ],
+            "title": "Temperature",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineStyle": {
+                    "fill": "solid"
+                  },
+                  "lineWidth": 2,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-red",
+                      "value": null
+                    },
+                    {
+                      "color": "orange",
+                      "value": 20
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 30
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 35
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 45
+                    },
+                    {
+                      "color": "orange",
+                      "value": 55
+                    },
+                    {
+                      "color": "dark-red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 24,
+              "x": 0,
+              "y": 27
+            },
+            "id": 20,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "timezone": [
+                "Europe/Madrid"
+              ],
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "frser-sqlite-datasource",
+                  "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+                },
+                "hide": false,
+                "queryText": "SELECT humidity, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM invalues;",
+                "queryType": "table",
+                "rawQueryText": "SELECT humidity, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM invalues;",
+                "refId": "A",
+                "timeColumns": [
+                  "time",
+                  "ts"
+                ]
+              }
+            ],
+            "title": "Humidity",
+            "type": "timeseries"
+          }
+        ],
+        "title": "Inside Values  Historial",
+        "type": "row"
+      },
+      {
+        "collapsed": true,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 19
+        },
+        "id": 16,
+        "panels": [
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineStyle": {
+                    "fill": "solid"
+                  },
+                  "lineWidth": 2,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-blue",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-blue",
+                      "value": 5
+                    },
+                    {
+                      "color": "light-blue",
+                      "value": 10
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 15
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 20
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 25
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 30
+                    },
+                    {
+                      "color": "dark-red",
+                      "value": 35
+                    }
+                  ]
+                },
+                "unit": "celsius"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 24,
+              "x": 0,
+              "y": 36
+            },
+            "id": 21,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "timezone": [
+                "Europe/Madrid"
+              ],
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "frser-sqlite-datasource",
+                  "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+                },
+                "hide": false,
+                "queryText": "SELECT temperature, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM outvalues;",
+                "queryType": "table",
+                "rawQueryText": "SELECT temperature, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM outvalues;",
+                "refId": "A",
+                "timeColumns": [
+                  "time",
+                  "ts"
+                ]
+              }
+            ],
+            "title": "Temperature",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineStyle": {
+                    "fill": "solid"
+                  },
+                  "lineWidth": 2,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-red",
+                      "value": null
+                    },
+                    {
+                      "color": "orange",
+                      "value": 20
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 30
+                    },
+                    {
+                      "color": "dark-green",
+                      "value": 35
+                    },
+                    {
+                      "color": "light-green",
+                      "value": 45
+                    },
+                    {
+                      "color": "orange",
+                      "value": 55
+                    },
+                    {
+                      "color": "dark-red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 24,
+              "x": 0,
+              "y": 44
+            },
+            "id": 22,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "timezone": [
+                "Europe/Madrid"
+              ],
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "frser-sqlite-datasource",
+                  "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+                },
+                "hide": false,
+                "queryText": "SELECT humidity, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM outvalues;",
+                "queryType": "table",
+                "rawQueryText": "SELECT humidity, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM outvalues;",
+                "refId": "A",
+                "timeColumns": [
+                  "time",
+                  "ts"
+                ]
+              }
+            ],
+            "title": "Humidity",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "frser-sqlite-datasource",
+              "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineStyle": {
+                    "fill": "solid"
+                  },
+                  "lineWidth": 2,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-blue",
+                      "value": null
+                    }
+                  ]
+                },
+                "unit": "velocityms"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 24,
+              "x": 0,
+              "y": 52
+            },
+            "id": 23,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "timezone": [
+                "Europe/Madrid"
+              ],
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "frser-sqlite-datasource",
+                  "uid": "ac84c9d9-0ccf-44e4-aa15-6107e0a2a07b"
+                },
+                "hide": false,
+                "queryText": "SELECT wind, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM outvalues;",
+                "queryType": "table",
+                "rawQueryText": "SELECT wind, strftime('%s', datetime(\"date\", 'localtime', '-4 hours')) AS time FROM outvalues;",
+                "refId": "A",
+                "timeColumns": [
+                  "time",
+                  "ts"
+                ]
+              }
+            ],
+            "title": "Wind Speed",
+            "type": "timeseries"
+          }
+        ],
+        "title": "Outside Values Historial",
+        "type": "row"
+      }
+    ],
+    "refresh": false,
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "METEO",
+    "uid": "c3708300-015a-468e-ae45-af424d6f82ee",
+    "version": 8,
+    "weekStart": "monday"
+  }
